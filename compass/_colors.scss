@@ -1,0 +1,17 @@
+@import "variables";
+
+@mixin colours( $property, $includeDefaultColour:false ){
+	@if ( $includeDefaultColour ){
+		background: $default-color;
+	}
+	@each $current-color in $colors-list {
+		$color-name: nth($colors-names, index( $colors-list, $current-color ) );
+		&.color-#{$color-name} {
+			#{$property}: $current-color;
+		}
+	}
+}
+
+@mixin background-colors( $includeDefaultColour ){
+	@include colours( background, $includeDefaultColour );
+}
