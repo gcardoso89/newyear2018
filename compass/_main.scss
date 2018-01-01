@@ -58,7 +58,6 @@ main {
 	justify-content: center;
 
 	.question {
-	  @include colours(color);
 	  padding-right: 20px;
 	  max-width: 40%;
 	  font-size: em(80);
