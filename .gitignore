@@ -33,5 +33,5 @@ npm-debug.log
 .idea/
 
 # Compass cache
-public/.sass-cache
-public/.sass-cache/*
+*/.sass-cache
+*/.sass-cache/*
