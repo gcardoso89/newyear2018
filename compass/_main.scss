@@ -3,262 +3,185 @@
 @import "responsive-mixins";
 
 @function em( $value, $baseSize: 16) {
-	@return ($value/$baseSize)+em;
+  @return ($value/$baseSize)+em;
 }
 
 .clearfix:after {
-	content: ".";
-	display: block;
-	visibility: hidden;
-	height: 0;
-	clear: both;
-	overflow: hidden;
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  overflow: hidden;
 }
 
 body {
-	font: 100% 'Source Sans Pro', sans-serif;
+  font: 100% 'Source Sans Pro', sans-serif;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 header {
-	position: relative;
-	z-index: 2;
-	@include box-sizing(border-box);
-	@include transition(color 1s ease-in-out);
-	color: white;
-	padding: 22px 22px 0 22px;
+  width: 100vh;
+  transform: rotate(-90deg) translateX(-50vh) translateY(-50vh);
+  transform-origin: center top;
+  h1 {
+	margin: 0;
+  }
+}
 
-	.wrap {
-		padding: em(24);
-	}
-
-	.logo {
-		font-size: em(120);
-		float: right;
-		color: inherit;
-	}
-
-	h1 {
-		margin: 0 0 0 em(10, 33);
-		display: block;
-		font-size: em(33);
-		text-transform: uppercase;
-		float: left;
-		padding: em(5, 33) 0;
-		border-bottom: em(5, 33) solid white;
-		@include transition(border-color 1s ease-in-out);
-	}
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
 }
 
 main {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	overflow: hidden;
-	z-index: 1;
-	border: 22px solid white;
-	@media all and (min-width: 481px) {
-		min-height: 630px;
+  @include transition(transform 0.5s 1s ease-in-out);
+  section {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.question {
+	  @include colours(color);
+	  padding-right: 20px;
+	  max-width: 40%;
+	  font-size: em(80);
 	}
 
-	@include transition(border-color 1s ease-in-out);
-	@include box-sizing(border-box);
-	@include background-colors(true);
+	.answers {
+	  max-width: 40%;
+	  padding-left: 20px;
+	  font-size: em(20);
 
-	canvas {
-		@include transform(translate3d(-50%, -50%, 0));
-		position: absolute;
-		left: 50%;
-		top: 50%;
+	  ol {
+		list-style-type: none;
+		counter-reset: listStyle;
+		padding: 0;
+
+		li {
+		  $fontSize: 20;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  counter-increment: listStyle;
+		  padding: em(20, $fontSize) 0;
+		  border-top: 1px solid #010101;
+
+		  &:first-child {
+			border-top: none;
+		  }
+
+		  &::before {
+			content: counter(listStyle, lower-alpha);
+			text-transform: uppercase;
+			width:30px;
+			text-align: center;
+			display: block;
+		  }
+
+		  .custom-radio {
+			display: block;
+			width: 100%;
+			padding-left: 30px
+		  }
+		}
+	  }
 	}
 
-	.button-area {
-		position: absolute;
-		bottom: 20%;
-		left: 50%;
-		@include transform(translate(-50%, 0));
+	.question, .answers {
+
 	}
+  }
 }
 
-.detail-container {
+.custom-radio {
+
+  position: relative;
+
+  input[type="radio"] {
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 3;
-	background: white;
-	text-align: center;
+	z-index: -1;
+	opacity: 0;
+  }
 
-	@include transition(transform 1s ease-in-out);
-	@include transform(translate3d(100%, 0, 0));
+  input[type="radio"]:checked ~ label {
+	&:after {
+	  width: 40px;
+	}
+  }
 
-	.wrap {
-		width: 80%;
-		height: auto;
-		position: absolute;
-		left: 50%;
-		top: 45%;
-		@include transform(translate3d(-50%, -50%, 0));
-		max-width: 960px;
+  label {
+	cursor: pointer;
+	display: block;
+
+	&:hover:after {
+	  width: 40px;
 	}
 
-	.video-wrap {
-		margin: 0 auto;
-		height: 540px;
-	}
+	&:after {
+	  content: "";
+	  @include transform(skewY(-12deg));
+	  width: 0px;
+	  height: 25px;
+	  position: absolute;
+	  z-index: -1;
+	  left: -33px;
+	  top: 13px;
+	  @include transition(width 0.2s ease-out);
 
-	.image-wrap {
-		margin: 0 auto;
-		height: 540px;
-		img {
-			max-height: 100%;
-			max-width: 100%;
-			position: relative;
-			display: block;
-			top: 50%;
-			left: 50%;
-			@include transform(translate(-50%, -50%));
-		}
 	}
-
-	.text-container {
-		text-transform: uppercase;
-		font-size: em(68);
-		padding-bottom: em(20, 68);
-		text-align: center;
-		line-height: 1;
-	}
-
-	.button-container {
-		position: absolute;
-		left: 50%;
-		bottom: 15%;
-		@include transform(translate(-50%, 0%));
-	}
-
-	.social-container {
-		position: absolute;
-		bottom: 5%;
-		left: 50%;
-		@include transform(translate(-50%, 0%));
-		@include colours(color);
-		font-size: em(26);
-		white-space: nowrap;
-		a {
-			display: inline-block;
-			padding: 0 em(5);
-			margin: 0 em(5);
-			color: inherit;
-		}
-	}
+	@include colours(background-color, false, true);
+  }
 
 }
 
 button {
-	font-size: em(30);
-	background: transparent;
-	border: em(5, 30) solid white;
-	padding: em(7, 30) em(15, 30);
-	min-width: em(210, 30);
-	text-transform: uppercase;
+  $baseButtonFontSize: 18;
+  font-size: em($baseButtonFontSize);
+  background: white;
+  border: em(4, $baseButtonFontSize) solid;
+  padding: em(7, $baseButtonFontSize) em(15, $baseButtonFontSize);
+  text-transform: uppercase;
+  white-space: nowrap;
+  @include transition(border 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out, background 0.3s ease-in-out);
+  @include colours(border-color);
+  @include colours(color);
+  &:focus {
+	outline: 0;
+  }
+  &:hover, &.inactive {
 	color: white;
-	white-space: nowrap;
-	@include transition(border 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out);
-	&:focus {
-		outline: 0;
-	}
-	&:hover, &.inactive {
-		@include colours(color);
-		background: #fff;
-	}
-	&.inactive {
-		@include opacity( 0.3 );
-	}
+	@include background-colors(false);
+  }
+  &.inactive {
+	@include opacity(0.3);
+  }
 
-	&.inactive {
-		cursor: pointer;
-	}
+  &.inactive {
+	cursor: pointer;
+  }
 
-	&:active {
-		@include transform(scale(0.95, 0.95));
-	}
+  &:active {
+	@include transform(scale(0.95, 0.95));
+  }
 }
 
-footer {
-	position: absolute;
-	width: 100%;
-	height: 40px;
-	left: 0;
-	bottom: 0;
-	z-index: 2;
-	@include box-sizing(border-box);
-	font-size: em(14);
-	.wrap {
-		padding: 0 em(25, 14) em(25, 14) em(25, 14);
-	}
-	color: white;
-	@include transition(color 1s ease-in-out);
-	a {
-		color: inherit;
-		text-decoration: underline;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	span {
-		display: none;
-		em {
-			cursor: pointer;
-			text-decoration: underline;
-			font-style: normal;
-		}
-	}
+.button-reset {
+  display: none
 }
-
-
-
-body {
-	&.slide-in {
-		main {
-			@include colours(border-color);
-
-			footer {
-				@include colours(color);
-			}
-		}
-
-		header {
-			@include colours(color);
-
-			h1 {
-				@include colours(border-color);
-			}
-		}
-
-		.detail-container {
-			@include transform(translate3d(0, 0, 0));
-		}
-
-		button {
-			@include colours(border-color);
-			@include colours(color);
-			&:hover {
-				@include colours(background-color);
-				color: white;
-			}
-		}
-	}
-}
-
-@include responsive-padding-header();
-@include responsive-border-width(main);
-@include responsive-detail-text();
-@include responsive-detail-wrap();
-@include responsive-header();
-@include responsive-button();
