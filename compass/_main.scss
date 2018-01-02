@@ -51,6 +51,7 @@ header {
 
 main {
   @include transition(transform 0.5s 1s ease-in-out);
+
   section {
 	height: 100vh;
 	display: flex;
