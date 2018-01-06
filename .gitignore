@@ -29,9 +29,6 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
-# Web storm
-.idea/
-
 # Compass cache
 .sass-cache
 .sass-cache/*
