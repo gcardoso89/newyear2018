@@ -1,28 +1,29 @@
 let globalEmitter = (function () {
 
-	class Emitter{
-		constructor(){
+	class Emitter {
+		constructor() {
 			this._events = {};
 			this._globalEvents = {};
 			this._timestampid = null;
 			this._sameTimestampCounter = 0;
 		}
 
-		unsubscribe( id ){
-			if ( !this._globalEvents.hasOwnProperty( id ) ){
-				console.warn( "::Emitter warning:: " + id + ' is not declared yet');
+		unsubscribe( id ) {
+			if ( !this._globalEvents.hasOwnProperty( id ) ) {
+				console.warn( "::Emitter warning:: " + id + ' is not declared yet' );
 				return false;
 			}
 			delete this._globalEvents[ id ];
 			return true;
+			z
 		}
 
-		subscribe( eventName, callback, priority ){
+		subscribe( eventName, callback, priority ) {
 			let id = this._getEventId();
 			priority = priority || Number.MAX_VALUE;
 			let event = { id, callback, priority, eventName };
 
-			if ( !this._events.hasOwnProperty( eventName ) ){
+			if ( !this._events.hasOwnProperty( eventName ) ) {
 				this._events[ eventName ] = [];
 			}
 			this._events[ eventName ].push( event );
@@ -33,16 +34,16 @@ let globalEmitter = (function () {
 			return id;
 		}
 
-		invoke( eventName, ...other ){
-			if ( !this._events.hasOwnProperty( eventName ) ){
+		invoke( eventName, ...other ) {
+			if ( !this._events.hasOwnProperty( eventName ) ) {
 				throw( "::Emitter warning:: " + eventName + ' is not declared yet')
 			}
 			this._events[ eventName ].forEach( value => value.callback( value, ...other ) );
 		}
 
-		_redefinePriorities( eventName, priority ){
-			if ( typeof priority !== "undefined" ){
-				if ( typeof priority === "number" && priority > 0 ){
+		_redefinePriorities( eventName, priority ) {
+			if ( typeof priority !== "undefined" ) {
+				if ( typeof priority === "number" && priority > 0 ) {
 					let eventList = this._events[ eventName ];
 					eventList.sort( ( a, b ) => a.priority - b.priority );
 				} else {
@@ -51,11 +52,11 @@ let globalEmitter = (function () {
 			}
 		}
 
-		_getEventId(){
+		_getEventId() {
 			let currentTimestamp = Date.now().toString();
 			let id;
 
-			if ( currentTimestamp === this._timestampid ){
+			if ( currentTimestamp === this._timestampid ) {
 				id = `${currentTimestamp}_${++this._sameTimestampCounter}`
 			} else {
 				this._sameTimestampCounter = 0;

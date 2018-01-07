@@ -1,11 +1,9 @@
 var CONFIG = {
-	colorList : [ '#ff7376', '#ffc0db', '#7bc9cf', '#ffdc00', '#4f7ffb' ],
+	colorList : [ '#00ffd2', '#00ff60', '#ff26de' ],
 	colorMap: {
-		'#ff7376': 'red',
-		'#ffc0db': 'pink',
-		'#7bc9cf': 'green',
-		'#ffdc00': 'yellow',
-		'#4f7ffb': 'blue'
+		'#00ffd2': 'blue',
+		'#00ff60': 'green',
+		'#ff26de': 'pink'
 	}
 };
 

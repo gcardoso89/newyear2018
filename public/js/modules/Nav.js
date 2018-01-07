@@ -1,52 +1,34 @@
 import { EVENTS } from '../constants';
 import globalEmmiter from './Emitter';
+import { getProperty } from "./helpers";
 
 class Quiz {
 	constructor() {
-		this._results = {};
-		this._quiz = document.getElementById('quiz');
-		this._quiz.addEventListener('submit', this.checkFinalResult.bind(this));
-		this._resetButton = document.querySelector('input[type="reset"]');
-		let radioList = document.querySelectorAll('input[type="radio"]');
-		radioList.forEach(radio => {
-			this._results[radio.name] = null;
-			radio.addEventListener('change', this.onChangeAnswer.bind(this));
-		});
+		this._container = document.getElementById( 'nav' );
+		this._navElements = document.querySelectorAll( '#nav ul li' );
+		globalEmmiter.subscribe( EVENTS.GO_TO_SECTION, this._onSectionChange.bind( this ) );
 	}
 
-	onChangeAnswer(evt) {
-		let element = evt.target;
-		let profile = atob(element.dataset.profile);
-		let question = element.name;
-		if (element.checked) {
-			this._results[question] = profile;
-		}
-		// The first index is the main one
-		globalEmmiter.invoke( EVENTS.GO_TO_SECTION, parseInt(question, 10) + 1 );
+	show() {
+		this._container.style = getProperty('transform','translate3d(0,0,0)');
 	}
 
-	reset(){
-		this._resetButton.click();
-		for (let question of Object.keys(this._results)) {
-			this._results[question] = null;
-		}
+	hide() {
+		this._container.style = '';
 	}
 
-	checkFinalResult(e) {
-		e.preventDefault();
-		let submitted = true;
-		let ranking = {};
-		for (let question of Object.keys(this._results)) {
-			if (!this._results[question]) {
-				submitted = false;
-				break;
+	_onSectionChange( evt, newSectionIndex ) {
+		debugger;
+		for ( let i = 0; i < this._navElements.length; i++ ) {
+			let navElement = this._navElements[ i ];
+			let className = navElement.getAttribute( 'class' );
+			if ( className.indexOf( ' selected' ) !== -1 ) {
+				navElement.setAttribute( 'class', className.replace( ' selected', '' ) );
 			}
-			if ( !ranking[this._results[question]] ){
-				ranking[this._results[question]] = 0;
+			if ( i === newSectionIndex ) {
+				navElement.setAttribute( 'class', className + ' selected' );
 			}
-			ranking[this._results[question]]++;
 		}
-		if (!submitted) return false;
 	}
 }
 

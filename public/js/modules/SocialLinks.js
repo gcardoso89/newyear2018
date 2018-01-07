@@ -15,7 +15,7 @@ export default class SocialLinks {
 
 		globalEmitter.subscribe( EVENTS.SET_SOCIAL_LINKS, ( e, word ) => this._setSocialLinks( btoa( word ) ) );
 
-		this._credits.addEventListener( 'click', (e) => { 
+		this._credits.addEventListener( 'click', ( e ) => {
 			e.preventDefault();
 			this._creditsText.style.display = 'inline-block';
 			this._credits.style.display = 'none';

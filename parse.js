@@ -59,6 +59,6 @@ xlsxj({
 		});
 
 		var file = 'const QUESTIONS = ' + JSON.stringify(questions) + ';module.exports = QUESTIONS;';
-		fs.writeFileSync('public/js/questions.js', file, {encoding: 'utf-8'});
+		fs.writeFileSync('questions.js', file, {encoding: 'utf-8'});
 	}
 });
