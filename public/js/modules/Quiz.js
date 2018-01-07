@@ -35,7 +35,6 @@ class Quiz {
 		}
 		// The first index is the main one
 		globalEmmiter.invoke( EVENTS.GO_TO_SECTION, parseInt( question, 10 ) + 1 );
-		console.log( question );
 		if ( parseInt( question, 10 ) === this._questionCount - 1 ) {
 			let winner = this.checkFinalResult();
 			this.showWinner( winner );

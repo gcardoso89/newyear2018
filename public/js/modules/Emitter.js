@@ -15,7 +15,6 @@ let globalEmitter = (function () {
 			}
 			delete this._globalEvents[ id ];
 			return true;
-			z
 		}
 
 		subscribe( eventName, callback, priority ) {

@@ -1,4 +1,4 @@
-import { EVENTS, RESPONSIVE_WIDTH_ARRAY } from "./constants";
+import { EVENTS } from "./constants";
 import Quiz from "./modules/Quiz";
 import Nav from "./modules/Nav";
 import globalEmmiter from "./modules/Emitter";
