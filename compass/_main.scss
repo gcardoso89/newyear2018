@@ -17,6 +17,7 @@
 
 body {
   font: 100% 'Open Sans', sans-serif;
+  height: 100vh;
   @include transition(background-color $animation-time ease-out);
   &.final {
 	@include colours(background-color);
@@ -213,7 +214,7 @@ main {
 	  line-height: 2;
 
 	  p {
-		font-weight: $font-weight-bold;
+		font-weight: $font-weight-extra-bold;
 		text-transform: uppercase;
 		margin: 10px 0;
 		position: relative;
@@ -347,7 +348,7 @@ button {
   padding-right: 10%;
   padding-top: 5vw;
   &#final-client-parfait {
-  	padding-top: 7vw;
+	padding-top: 7vw;
   }
   padding-bottom: 2vw;
   min-height: 100vh;
@@ -438,4 +439,92 @@ button {
 
 #final-vintage {
   background-image: url(../images/Vintage.svg);
+}
+
+@media all and (max-width: 580px) {
+
+  nav {
+	right: 10px;
+	ul {
+	  li {
+		&:before {
+		  display: none;
+		  width: 13px;
+		  height: 13px;
+		}
+	  }
+	}
+  }
+
+  main {
+	section {
+	  flex-direction: column;
+
+	  .question, .answers {
+		padding: 0;
+		width: 80%;
+		max-width: none;
+	  }
+
+	  .question {
+		font-size: em(20);
+		line-height: 1.2;
+	  }
+
+	  .answers {
+		padding-right: 10px;
+		font-size: em(14);
+		ol {
+		  li {
+			.custom-radio {
+			  padding-left: 10px;
+			}
+		  }
+		}
+
+	  }
+
+	  .entrance-right, .entrance-left {
+		padding: 0;
+	  }
+
+	  .entrance-right {
+		font-size: em(14);
+	  }
+
+	  .entrance-left {
+		font-size: em(40);
+	  }
+	}
+  }
+}
+
+@media all and (max-width: 764px) {
+
+  header {
+	.logo {
+	  width: 40px;
+	  height: 40px;
+	}
+  }
+
+  footer {
+	font-size: em(12);
+	padding-left: 10px;
+	padding-top: 10px;
+  }
+
+  .final-container {
+	padding: 70px 40px 60vh;
+	&#final-client-parfait {
+	  padding-top: 70px;
+	}
+	background-position: center bottom;
+	background-size: auto 60vh;
+	.text {
+	  h2 {
+		font-size: em(40);
+	  }
+	}
+  }
 }
