@@ -1,34 +1,30 @@
-import { EVENTS } from "../constants";
-import globalEmitter from "./Emitter";
-
 export default class SocialLinks {
 
 	constructor() {
 		this._shareUrl = null;
 		this._baseUrl = `${location.protocol}//${location.host}/`;
-		this._twitter = document.getElementById( 'social-twitter' );
-		this._facebook = document.getElementById( 'social-facebook' );
-		this._mail = document.getElementById( 'social-mail' );
-		this._credits = document.getElementById( 'credits-link' );
-		this._creditsText = document.getElementById( 'credits-text' );
-		this._creditsTextLink = document.getElementById( 'credits-text-link' );
+		this._twitter = document.querySelectorAll( '.sharing-twitter' );
+		this._facebook = document.querySelectorAll( '.sharing-facebook' );
 
-		globalEmitter.subscribe( EVENTS.SET_SOCIAL_LINKS, ( e, word ) => this._setSocialLinks( btoa( word ) ) );
+		for ( let i = 0; i < this._twitter.length; i++ ) {
+			let btn = this._twitter[ i ];
+			this._setTwitterLink( btn );
+		}
 
-		this._credits.addEventListener( 'click', ( e ) => {
-			e.preventDefault();
-			this._creditsText.style.display = 'inline-block';
-			this._credits.style.display = 'none';
-		} );
+		for ( let i = 0; i < this._facebook.length; i++ ) {
+			let btn = this._facebook[ i ];
+			this._setFacebookLink( btn );
+		}
+
 	}
 
-	_setTwitterLink() {
+	_setTwitterLink( button ) {
 		let baseUrl = 'https://twitter.com/intent/tweet';
-		let shareUrl = encodeURIComponent( this._shareUrl );
+		let shareUrl = encodeURIComponent( this._baseUrl + button.dataset.profile );
 		baseUrl += '?url=' + shareUrl;
-		baseUrl += "&text=" + encodeURIComponent( "Enfin une bonne idée pour de bonnes résolutions de début d’année. À tester sans tarder ! Merci @4aout" );
+		baseUrl += "&text=" + encodeURIComponent( button.dataset.description );
 
-		this._twitter.addEventListener( 'click', ( e ) => {
+		button.addEventListener( 'click', ( e ) => {
 			e.preventDefault();
 			let width = 575,
 				height = 400,
@@ -45,27 +41,15 @@ export default class SocialLinks {
 
 	}
 
-	_setFacebookLink() {
-		this._facebook.addEventListener( 'click', ( e ) => {
+	_setFacebookLink( button ) {
+		button.addEventListener( 'click', ( e ) => {
 			e.preventDefault();
 			FB.ui( {
 				method: 'share',
-				href: this._shareUrl
+				href: this._baseUrl + button.dataset.profile
 			} );
 		} );
 	}
 
-	_setMailLink() {
-		let subject = encodeURIComponent( 'En 2017, promis j’arrête…' );
-		let bodyText = encodeURIComponent( 'Enfin une bonne idée pour de bonnes résolutions de début d’année. À tester sans tarder !' );
-		this._mail.setAttribute( 'href', 'mailto:?subject=' + subject + '&body=' + bodyText );
-	}
-
-	_setSocialLinks( shareId ) {
-		this._shareUrl = this._baseUrl + shareId;
-		this._setTwitterLink();
-		this._setFacebookLink();
-		this._setMailLink();
-	}
 }
 

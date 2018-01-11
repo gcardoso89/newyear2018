@@ -1,6 +1,7 @@
 import { EVENTS } from "./constants";
 import Quiz from "./modules/Quiz";
 import Nav from "./modules/Nav";
+import SocialLinks from "./modules/SocialLinks";
 import globalEmmiter from "./modules/Emitter";
 import { getProperty } from "./modules/helpers";
 
@@ -9,7 +10,7 @@ import { getProperty } from "./modules/helpers";
 		constructor() {
 			this._quiz = new Quiz();
 			this._nav = new Nav();
-			this._nav = new Nav();
+			this._social = new SocialLinks();
 			this._entranceButton = document.getElementById( 'button-entrance' );
 			this._container = document.querySelector( 'main' );
 			this._body = document.getElementsByTagName( 'body' )[ 0 ];

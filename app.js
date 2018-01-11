@@ -14,11 +14,14 @@ if ( isDevEnv ) {
 }
 
 // view engine setup
-app.set( 'views', path.join( __dirname, 'views' ) );
-
 app.engine( "hbs", exphbs( {
 	helpers: require( "./helpers.js" ).helpers, // same file that gets used on our client
+	extname: '.hbs',
+	partialsDir: [
+		'views/partials/'
+	]
 } ) );
+app.set( 'views', path.join( __dirname, 'views' ) );
 app.set( 'view engine', 'hbs' );
 
 app.use( favicon( path.join( __dirname, 'public', 'favicon.ico' ) ) );

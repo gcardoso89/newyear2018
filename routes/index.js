@@ -27,7 +27,9 @@ router.get('/:winner', function (req, res, next) {
 		res.redirect( '/' );
 		return;
 	}
-	res.render('index', {classColorName: 'color-' + generateNewColor(), layout: null, winner: winner, finals: finals });
+	let winnerObj = Object.assign({}, finals[winner]);
+	winnerObj.key = winner;
+	res.render('index', {classColorName: 'color-' + generateNewColor(), layout: null, winner: winnerObj, finals: finals });
 });
 
 module.exports = router;

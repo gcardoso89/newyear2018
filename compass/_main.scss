@@ -26,6 +26,11 @@ body {
 	  .logo {
 		background-color: #000;
 	  }
+	  a {
+		&:hover {
+		  background-color: #000;
+		}
+	  }
 	}
 
 	footer {
@@ -63,6 +68,29 @@ header {
 	mask-position: center top;
 	width: 77px;
 	height: 77px;
+  }
+  .social {
+	position: absolute;
+	right: 40px;
+	top: 30px;
+
+	a {
+	  display: block;
+	  width: 30px;
+	  height: 30px;
+	  float: left;
+	  margin-left: 20px;
+	  color: inherit;
+	  svg {
+		fill: currentColor;
+		g {
+		  fill: currentColor;
+		}
+	  }
+	  &:hover {
+		@include colours(color);
+	  }
+	}
   }
 }
 
@@ -299,6 +327,7 @@ button {
   padding: em(7, $baseButtonFontSize) em(15, $baseButtonFontSize);
   text-transform: uppercase;
   white-space: nowrap;
+  display: inline-block;
   @include transition(border 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out, background 0.3s ease-in-out);
   @include colours(border-color);
   @include colours(color);
@@ -325,6 +354,20 @@ button {
 	background-color: #000;
 	color: white;
 	border-color: #000;
+  }
+
+  &.icon {
+	padding: 0px;
+  }
+
+  svg {
+	fill: currentColor;
+	width: 40px;
+	height: 33px;
+	vertical-align: middle;
+	g {
+	  fill: currentColor;
+	}
   }
 }
 
@@ -410,35 +453,15 @@ button {
 	  text-transform: uppercase;
 	}
 
-	button {
-	  margin-top: 20px
+	.buttons {
+	  margin-top: 20px;
+	  display: flex;
+	  button {
+		margin-right: 20px;
+	  }
 	}
   }
 
-}
-
-#final-angoisse-du-brief {
-  background-image: url(../images/AgoisseBrief.svg);
-}
-
-#final-baroque-multicolore {
-  background-image: url(../images/BaroqueMulticolore.svg);
-}
-
-#final-bff-best-friend-forever {
-  background-image: url(../images/BFF.svg);
-}
-
-#final-client-parfait {
-  background-image: url(../images/ClientParfait.svg);
-}
-
-#final-cost-killer {
-  background-image: url(../images/CostKiller.svg);
-}
-
-#final-vintage {
-  background-image: url(../images/Vintage.svg);
 }
 
 @media all and (max-width: 580px) {

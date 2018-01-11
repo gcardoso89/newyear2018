@@ -6,31 +6,62 @@
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<meta name="description"
-				content="Découvrez les bonnes résolutions que nous avons imaginées rien que pour vous. Une idée originale de l’agence 4août"/>
-	<meta name="keywords" content="Voeux, 2017, 4 août, générateur, gif, vidéo"/>
-	<meta name="author" content="4août"/>
-	<meta name="robots" content="index, follow"/>
+	{{#if winner}}
+		<meta name="description"
+					content="{{winner.facebook}}"/>
+		<meta name="keywords" content="2018, 4 août, quiz"/>
+		<meta name="author" content="4août"/>
+		<meta name="robots" content="index, follow"/>
 
-	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:site" content="@4aout"/>
-	<meta name="twitter:creator" content="@4aout"/>
-	<meta name="twitter:title" content="En 2017, promis j’arrête…"/>
-	<meta name="twitter:description"
-				content="Enfin une bonne idée pour de bonnes résolutions de début d’année. À tester sans tarder !"/>
-	<meta name="twitter:image"
-				content="http://www.en2017promisjarrete.net/images/social/En2017PromisJarrete_Social.jpg"/>
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:site" content="@4aout"/>
+		<meta name="twitter:creator" content="@4aout"/>
+		<meta name="twitter:title" content="..."/>
+		<meta name="twitter:description"
+					content="{{winner.twitter}}"/>
+		<meta name="twitter:image"
+					content="http://moiclient.fr/images/social/Voeux_2018_{{winner.key}}_twitter.png"/>
 
-	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="En 2017, promis j’arrête…"/>
-	<meta property="og:description"
-				content="Enfin une bonne idée pour de bonnes résolutions de début d’année. À tester sans tarder !"/>
-	<meta property="og:image"
-				content="http://www.en2017promisjarrete.net/images/social/En2017PromisJarrete_Social.jpg"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="..."/>
+		<meta property="og:description"
+					content="{{winner.facebook}}"/>
+		<meta property="og:image"
+					content="http://moiclient.fr/images/social/Voeux_2018_{{winner.key}}_facebook.png"/>
+	{{else}}
+		<meta name="description"
+					content="2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le test concocté par @4aout et
+				découvrez quel type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout "/>
+		<meta name="keywords" content="2018, 4 août, quiz"/>
+		<meta name="author" content="4août"/>
+		<meta name="robots" content="index, follow"/>
+
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:site" content="@4aout"/>
+		<meta name="twitter:creator" content="@4aout"/>
+		<meta name="twitter:title" content="..."/>
+		<meta name="twitter:description"
+					content="#2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le #test concocté par @4aout et découvrez quel
+				type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout http://moiclient.fr"/>
+		<meta name="twitter:image"
+					content="http://moiclient.fr/images/social/Voeux_2018_twitter.png"/>
+
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="..."/>
+		<meta property="og:description"
+					content="2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le test concocté par @4aout et
+				découvrez quel type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout "/>
+		<meta property="og:image"
+					content="http://moiclient.fr/images/social/Voeux_2018_facebook.png"/>
+	{{/if}}
 </head>
 <body class="{{classColorName}} {{#if winner}}final{{/if}}">
 <header>
 	<a href="http://4aout.fr/" target="_blank" class="{{classColorName}} logo"></a>
+	<div class="social">
+		<a href="#" class="sharing-facebook {{classColorName}}" id="facebook-sharing"><svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg></a>
+		<a href="#" class="sharing-twitter {{classColorName}}" id="twitter-sharing"><svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg></a>
+	</div>
 </header>
 {{#if questions}}
 <div class="wrap">
@@ -43,7 +74,7 @@
 	</nav>
 	<main class="{{classColorName}}" {{#if winner}}style="-ms-transform: translate3d(0,-1400vh,0); -moz-transform: translate3d(0,-1400vh,0); -webkit-transform: translate3d(0,-1400vh,0); transform: translate3d(0,-1400vh,0);"{{/if}}>
 		<section>
-			<div class="entrance-left {{classColorName}}">Cher cliente, cher client,</div>
+			<div class="entrance-left {{classColorName}}">CHÈRE CLIENTE, CHER CLIENT</div>
 			<div class="entrance-right">L’agence 4août vous propose un test exclusif.<br/>
 				Perfectionniste, anxieux, détendu, conciliant, drôle, intransigeant…
 				<p class="{{classColorName}}">Quel client êtes-vous ?</p>
@@ -84,60 +115,18 @@
 	</main>
 </div>
 {{/if}}
-{{#each finals as |final|}}
-	{{#unless ../winner}}
-	<div class="final-container {{#equal @key ../winner}}winner{{/equal}}" {{#equal @key ../winner}}style="display:flex"{{/equal}} id="final-{{@key}}">
-		<div class="text">
-			<strong>Vous êtes un…</strong>
-			<h2 data-title="{{final.title}}" class="{{../classColorName}}">
-				<span class="title-text">{{final.title}}</span>
-			</h2>
-			{{#if final.description}}
-				<p>{{final.description}}</p>
-			{{/if}}
-			{{#if final.tendency}}
-				<b>Votre tendance en 2018</b>
-				<p>{{final.description}}</p>
-			{{/if}}
-			{{#if final.advice}}
-				<b>Le conseil agence</b>
-				<p>{{final.advice}}</p>
-			{{/if}}
-			{{#if final.congratulations}}
-				<b>bien tenté.</b>
-				<p>{{final.congratulations}}</p>
-			{{/if}}
-			<button class="restart-button color-black">Refaire le test</button>
-		</div>
+{{#if winner}}
+	<div class="final-container winner" style="display:flex" id="final-{{winner.key}}">
+		{{> character final=winner url=winner.key}}
 	</div>
-	{{/unless}}
-	{{#equal @key ../winner}}
-		<div class="final-container {{#equal @key ../winner}}winner{{/equal}}" {{#equal @key ../winner}}style="display:flex"{{/equal}} id="final-{{@key}}">
-			<div class="text">
-				<strong>Vous êtes un…</strong>
-				<h2 data-title="{{final.title}}" class="{{../classColorName}}">
-					<span class="title-text">{{final.title}}</span>
-				</h2>
-				{{#if final.description}}
-					<p>{{final.description}}</p>
-				{{/if}}
-				{{#if final.tendency}}
-					<b>Votre tendance en 2018</b>
-					<p>{{final.description}}</p>
-				{{/if}}
-				{{#if final.advice}}
-					<b>Le conseil agence</b>
-					<p>{{final.advice}}</p>
-				{{/if}}
-				{{#if final.congratulations}}
-					<b>bien tenté.</b>
-					<p>{{final.congratulations}}</p>
-				{{/if}}
-				<button class="restart-button color-black">Refaire le test</button>
-			</div>
+{{else}}
+	{{#each finals as |final|}}
+		<div class="final-container" id="final-{{@key}}">
+			{{> character final=final url=@key}}
 		</div>
-	{{/equal}}
-{{/each}}
+	{{/each}}
+{{/if}}
+
 <footer class="{{classColorName}}">
 	<span>©4août</span>
 </footer>
@@ -177,10 +166,10 @@
 
 	ga( 'create', 'UA-39829285-6', 'auto' );
 	ga( 'send', 'pageview' );
-		{{#if result}}
+		{{#if winner}}
 		ga( 'send', {
 			hitType: 'pageview',
-			page: "/" + SELECT_PHRASE
+			page: "/" + "{{{winner.key}}}"
 		} );
 		{{else}}
 
