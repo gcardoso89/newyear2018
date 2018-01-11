@@ -462,6 +462,33 @@ button {
 	}
   }
 
+  .image {
+	position: absolute;
+	left: 50%;
+	@include transform (translateX(-100%));
+	bottom: 0;
+	z-index: 1;
+	padding-right: 40px;
+	overflow: hidden;
+	img {
+	  margin-bottom:-5vh;
+	  width: auto;
+	  height: 80vh;
+	}
+  }
+
+  &#final-client-parfait {
+	.image {
+	  @include transform (translateX(-50%));
+	  padding-right: 0px;
+	  overflow: hidden;
+	  img {
+		margin-bottom:-15vh;
+		height: 90vh;
+	  }
+	}
+  }
+
 }
 
 @media all and (max-width: 580px) {
@@ -538,7 +565,7 @@ button {
   }
 
   .final-container {
-	padding: 70px 40px 60vh;
+	padding: 70px 40px;
 	&#final-client-parfait {
 	  padding-top: 70px;
 	}
@@ -547,6 +574,33 @@ button {
 	.text {
 	  h2 {
 		font-size: em(40);
+	  }
+	}
+
+	.image {
+	  position: static;
+	  left: auto;
+	  @include transform (translateX(0));
+	  bottom: auto;
+	  z-index: 1;
+	  padding-left: 20px;
+	  padding-right: 0;
+	  img {
+		width: auto;
+		height: 40vh;
+	  }
+	}
+
+	&#final-client-parfait {
+	  .image {
+		@include transform (translateX(0));
+		padding-right: 0px;
+		overflow: hidden;
+		img {
+		  margin-bottom:0;
+		  width: auto;
+		  height: 40vh;
+		}
 	  }
 	}
   }
