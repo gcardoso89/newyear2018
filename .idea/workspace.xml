@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef2fcc9b-54fa-49c6-9203-9e62161893a4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,8 +62,8 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="136" column="29" lean-forward="false" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="29" />
+            <state relative-caret-position="519">
+              <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -354,12 +355,12 @@
       <workItem from="1514767087361" duration="23386000" />
       <workItem from="1515217508606" duration="3158000" />
       <workItem from="1515221342343" duration="27948000" />
-      <workItem from="1515657440091" duration="8732000" />
+      <workItem from="1515657440091" duration="8920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64064000" />
+    <option name="totallyTimeSpent" value="64252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="969" extended-state="6" />
@@ -725,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="136" column="29" lean-forward="false" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="29" />
+        <state relative-caret-position="519">
+          <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
