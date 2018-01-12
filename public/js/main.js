@@ -19,7 +19,20 @@ import { getProperty } from "./modules/helpers";
 			if ( this._entranceButton ) {
 				this._entranceButton.addEventListener( 'click', this._onEntranceButtonClick.bind( this ) );
 			}
+
+			if ( navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1 ) {
+				this._elementsToFix = document.querySelectorAll( 'main section' );
+				window.onresize = this._windowOnResize.bind(this);
+				this._windowOnResize();
+			}
 		};
+
+		_windowOnResize() {
+			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
+				let element = this._elementsToFix[ i ];
+				element.style = `height: ${window.innerHeight}px`;
+			}
+		}
 
 		_onEntranceButtonClick( evt ) {
 			evt.preventDefault();
