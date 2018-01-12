@@ -24,7 +24,7 @@ import { getProperty } from "./modules/helpers";
 			this._isIPhone = navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1;
 
 			if ( this._isIPhone ) {
-				this._elementsToFix = document.querySelectorAll( 'main section, body' );
+				this._elementsToFix = document.querySelectorAll( 'main section' );
 				window.onresize = this._windowOnResize.bind( this );
 				this._windowOnResize();
 			}

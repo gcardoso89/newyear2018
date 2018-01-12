@@ -17,8 +17,8 @@
 
 body {
   font: 100% 'Open Sans', sans-serif;
-  @include transition(background-color $animation-time ease-out);
   height: 100vh;
+  @include transition(background-color $animation-time ease-out);
   &.final {
 	@include colours(background-color);
 	header {
@@ -393,6 +393,7 @@ button {
 	padding-top: 7vw;
   }
   padding-bottom: 2vw;
+  min-height: 100vh;
   display: none;
   align-items: flex-start;
   margin: 0 auto;
