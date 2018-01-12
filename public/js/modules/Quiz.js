@@ -10,15 +10,19 @@ class Quiz {
 		this._resetButton = document.querySelector( 'input[type="reset"]' );
 		this._restartButton = document.querySelectorAll( '.restart-button' );
 		let radioList = document.querySelectorAll( 'input[type="radio"]' );
-		radioList.forEach( radio => {
+		for ( let i = 0; i < radioList.length; i++ ) {
+			let radio = radioList[ i ];
 			this._results[ radio.name ] = null;
 			radio.addEventListener( 'change', this.onChangeAnswer.bind( this ) );
-		} );
+		}
 		for ( let i = 0; i < this._restartButton.length; i++ ) {
 			let restart = this._restartButton[ i ];
 			restart.addEventListener( 'click', ( e ) => globalEmmiter.invoke( EVENTS.RESTART_QUIZ ) );
 		}
-		this._buttons.forEach( button => button.addEventListener( 'click', e => e.preventDefault() ) );
+		for ( let i = 0; i < this._buttons.length; i++ ) {
+			let button = this._buttons[ i ];
+			button.addEventListener( 'click', e => e.preventDefault() )
+		}
 		globalEmmiter.subscribe( EVENTS.RESTART_QUIZ, this._restartQuiz.bind( this ) );
 	}
 

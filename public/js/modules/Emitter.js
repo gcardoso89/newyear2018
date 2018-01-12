@@ -37,7 +37,10 @@ let globalEmitter = (function () {
 			if ( !this._events.hasOwnProperty( eventName ) ) {
 				throw( "::Emitter warning:: " + eventName + ' is not declared yet')
 			}
-			this._events[ eventName ].forEach( value => value.callback( value, ...other ) );
+			for ( let i = 0; i < this._events[ eventName ].length; i++ ) {
+				let value = this._events[ eventName ][ i ];
+				value.callback( value, ...other );
+			}
 		}
 
 		_redefinePriorities( eventName, priority ) {
