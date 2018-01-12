@@ -12,6 +12,7 @@ import { getProperty } from "./modules/helpers";
 			this._nav = new Nav();
 			this._social = new SocialLinks();
 			this._entranceButton = document.getElementById( 'button-entrance' );
+			this._wrap = document.getElementById( 'main');
 			this._container = document.querySelector( 'main' );
 			this._body = document.getElementsByTagName( 'body' )[ 0 ];
 			this._questionCount = this._quiz.getNumberOfQuestions();
@@ -32,10 +33,10 @@ import { getProperty } from "./modules/helpers";
 		};
 
 		_windowOnResize() {
-			this._innerHeight = window.innerHeight;
+			this._innerHeight = this._wrap.height;
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
-				element.setAttribute( 'style', `height: ${window.innerHeight}px` );
+				element.setAttribute( 'style', `height: ${this._wrap.height}px` );
 			}
 			if ( this._activeSection !== null ) {
 				this._container.setAttribute( 'style', getProperty( 'transform', `translate3d(0,-${((this._activeSection + 1) * this._innerHeight)}px,0)` ) );
