@@ -10,11 +10,11 @@ class Quiz {
 	}
 
 	show() {
-		this._container.style = getProperty('transform','translate3d(0,0,0)');
+		this._container.setAttribute( 'style', getProperty( 'transform', 'translate3d(0,0,0)' ) );
 	}
 
 	hide() {
-		this._container.style = '';
+		this._container.setAttribute( 'style', '' );
 	}
 
 	_onSectionChange( evt, newSectionIndex ) {

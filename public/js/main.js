@@ -15,22 +15,30 @@ import { getProperty } from "./modules/helpers";
 			this._container = document.querySelector( 'main' );
 			this._body = document.getElementsByTagName( 'body' )[ 0 ];
 			this._questionCount = this._quiz.getNumberOfQuestions();
+			this._activeSection = null;
 			globalEmmiter.subscribe( EVENTS.GO_TO_SECTION, this._goToSection.bind( this ) );
 			if ( this._entranceButton ) {
 				this._entranceButton.addEventListener( 'click', this._onEntranceButtonClick.bind( this ) );
 			}
 
-			if ( navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1 ) {
+			this._isIPhone = navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1;
+
+			if ( this._isIPhone ) {
 				this._elementsToFix = document.querySelectorAll( 'main section' );
-				window.onresize = this._windowOnResize.bind(this);
+				window.onresize = this._windowOnResize.bind( this );
 				this._windowOnResize();
 			}
+
 		};
 
 		_windowOnResize() {
+			this._innerHeight = window.innerHeight;
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
-				element.setAttribute('style', `height: ${window.innerHeight}px`);
+				element.setAttribute( 'style', `height: ${window.innerHeight}px` );
+			}
+			if ( this._activeSection !== null ) {
+				this._container.setAttribute( 'style', getProperty( 'transform', `translate3d(0,-${((this._activeSection + 1) * this._innerHeight)}px,0)` ) );
 			}
 		}
 
@@ -52,7 +60,14 @@ import { getProperty } from "./modules/helpers";
 		}
 
 		_goToSection( evt, sectionIndex ) {
-			this._container.style = getProperty( 'transform', `translate3d(0,-${((sectionIndex + 1) * 100)}vh,0)` );
+			let style;
+			this._activeSection = sectionIndex;
+			if ( this._isIPhone ) {
+				style = `translate3d(0,-${((sectionIndex + 1) * this._innerHeight)}px,0)`;
+			} else {
+				style = `translate3d(0,-${((sectionIndex + 1) * 100)}vh,0)`;
+			}
+			this._container.setAttribute( 'style', getProperty( 'transform', style ) );
 			if ( sectionIndex === this._questionCount ) {
 				this._nav.hide();
 				this._addFinalClass();
