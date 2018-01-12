@@ -52,6 +52,7 @@ import { getProperty } from "./modules/helpers";
 			const currentClass = this._body.getAttribute( 'class' );
 			this._body.setAttribute( 'class', currentClass.replace( ' final', '' ) );
 			this._body.setAttribute( 'class', currentClass + ' final' );
+			if ( this._isIPhone ) setTimeout( () => this._windowOnResize(), 1000 );
 		}
 
 		_removeFinalClass() {
