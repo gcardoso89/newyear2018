@@ -30,7 +30,7 @@ import { getProperty } from "./modules/helpers";
 		_windowOnResize() {
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
-				element.style = `height: ${window.innerHeight}px`;
+				element.setAttribute('style', `height: ${window.innerHeight}px`);
 			}
 		}
 
