@@ -560,6 +560,13 @@ button {
 	  .entrance-left {
 		font-size: em(40);
 	  }
+
+	  .entrance-button {
+		position: static;
+		bottom: auto;
+		left: auto;
+		padding-top: 30px;
+	  }
 	}
   }
 }
