@@ -33,7 +33,7 @@ import { getProperty } from "./modules/helpers";
 		};
 
 		_windowOnResize() {
-			this._innerHeight = (this._wrap) ? this._wrap.height : window.innerHeight;
+			this._innerHeight = (this._wrap) ? this._wrap.offsetHeight : window.innerHeight;
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
 				element.setAttribute( 'style', `height: ${this._innerHeight}px` );
