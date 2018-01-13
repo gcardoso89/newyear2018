@@ -2,13 +2,14 @@ import { EVENTS } from '../constants';
 import globalEmmiter from './Emitter';
 
 class Quiz {
-	constructor() {
+	constructor( isIPhone ) {
 		this._results = {};
 		this._quiz = document.getElementById( 'quiz' );
 		this._questionCount = document.querySelectorAll( 'form section' ).length;
 		this._buttons = document.querySelectorAll( 'form section button' );
 		this._resetButton = document.querySelector( 'input[type="reset"]' );
 		this._restartButton = document.querySelectorAll( '.restart-button' );
+		this._isIPhone = isIPhone;
 		let radioList = document.querySelectorAll( 'input[type="radio"]' );
 		for ( let i = 0; i < radioList.length; i++ ) {
 			let radio = radioList[ i ];
@@ -99,7 +100,11 @@ class Quiz {
 			block.setAttribute( 'class', 'final-container' );
 		}
 		let winnerBlock = document.getElementById( `final-${winner}` );
-		winnerBlock.setAttribute( 'style', 'display:flex;' );
+		if ( this._isIPhone ){
+			winnerBlock.setAttribute( 'style', 'display:flex;' );
+		} else {
+			winnerBlock.setAttribute( 'style', 'display:block;' );
+		}
 		setTimeout( () => winnerBlock.setAttribute( 'class', 'final-container winner' ), 100 )
 		history.pushState({}, 'Winner', `/${winner}`);
 	}

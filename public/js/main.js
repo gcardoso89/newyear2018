@@ -8,9 +8,10 @@ import { getProperty } from "./modules/helpers";
 (function () {
 	class MainApp {
 		constructor() {
-			this._quiz = new Quiz();
-			this._nav = new Nav();
-			this._social = new SocialLinks();
+			this._isIPhone = navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1;
+			this._quiz = new Quiz(this._isIPhone);
+			this._nav = new Nav(this._isIPhone);
+			this._social = new SocialLinks(this._isIPhone);
 			this._entranceButton = document.getElementById( 'button-entrance' );
 			this._wrap = document.getElementById( 'main');
 			this._container = document.querySelector( 'main' );
@@ -22,7 +23,7 @@ import { getProperty } from "./modules/helpers";
 				this._entranceButton.addEventListener( 'click', this._onEntranceButtonClick.bind( this ) );
 			}
 
-			this._isIPhone = navigator.userAgent.toLowerCase().indexOf( "iphone" ) !== -1;
+
 
 			if ( this._isIPhone ) {
 				this._elementsToFix = document.querySelectorAll( 'main section' );
