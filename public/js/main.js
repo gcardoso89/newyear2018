@@ -13,7 +13,6 @@ import { getProperty } from "./modules/helpers";
 			this._nav = new Nav(this._isIPhone);
 			this._social = new SocialLinks(this._isIPhone);
 			this._entranceButton = document.getElementById( 'button-entrance' );
-			this._wrap = document.getElementById( 'main');
 			this._container = document.querySelector( 'main' );
 			this._body = document.getElementsByTagName( 'body' )[ 0 ];
 			this._questionCount = this._quiz.getNumberOfQuestions();
@@ -26,13 +25,16 @@ import { getProperty } from "./modules/helpers";
 			if ( this._isIPhone ) {
 				this._elementsToFix = document.querySelectorAll( 'main section' );
 				window.onresize = this._windowOnResize.bind( this );
+				window.onload = this._windowOnResize.bind( this );
+				window.onreadystatechange = this._windowOnResize.bind( this );
+				window.onready = this._windowOnResize.bind( this );
 				this._windowOnResize();
 			}
 
 		};
 
 		_windowOnResize() {
-			this._innerHeight = (this._wrap) ? this._wrap.offsetHeight : window.innerHeight;
+			this._innerHeight = window.innerHeight;
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
 				element.setAttribute( 'style', `height: ${this._innerHeight}px` );
