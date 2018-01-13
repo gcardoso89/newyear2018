@@ -23,6 +23,16 @@ body {
 	@include colours(background-color);
 
 	header {
+	  &.color-blue {
+		background: rgba(0, 255, 210, 0.8);
+	  }
+	  &.color-green {
+		background: rgba(0, 255, 96, 0.8);
+	  }
+	  &.color-pink {
+		background: rgba(255, 38, 222, 0.8);
+	  }
+
 	  .logo {
 		background-color: #000;
 	  }
@@ -59,9 +69,6 @@ header {
 
   & {
 	background: rgba(255, 255, 255, 0.8);
-	& {
-
-	}
   }
 
   .logo {

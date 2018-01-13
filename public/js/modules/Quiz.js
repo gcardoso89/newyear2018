@@ -101,9 +101,9 @@ class Quiz {
 		}
 		let winnerBlock = document.getElementById( `final-${winner}` );
 		if ( this._isIPhone ){
-			winnerBlock.setAttribute( 'style', 'display:flex;' );
-		} else {
 			winnerBlock.setAttribute( 'style', 'display:block;' );
+		} else {
+			winnerBlock.setAttribute( 'style', 'display:flex;' );
 		}
 		setTimeout( () => winnerBlock.setAttribute( 'class', 'final-container winner' ), 100 )
 		history.pushState({}, 'Winner', `/${winner}`);
