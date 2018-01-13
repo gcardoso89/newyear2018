@@ -23,16 +23,6 @@ body {
 	@include colours(background-color);
 
 	header {
-	  &.color-blue {
-		background: rgba(0, 255, 210, 0.8);
-	  }
-	  &.color-green {
-		background: rgba(0, 255, 96, 0.8);
-	  }
-	  &.color-pink {
-		background: rgba(255, 38, 222, 0.8);
-	  }
-
 	  .logo {
 		background-color: #000;
 	  }
@@ -41,6 +31,10 @@ body {
 		  background-color: #000;
 		}
 	  }
+	}
+
+	main {
+	  opacity: 0;
 	}
 
 	footer {
@@ -66,11 +60,6 @@ header {
   z-index: 3;
   width: 100%;
   padding: 20px;
-
-  & {
-	background: rgba(255, 255, 255, 0.8);
-  }
-
   .logo {
 	display: block;
 	@include transition(background-color);
@@ -185,7 +174,7 @@ footer {
 }
 
 main {
-  @include transition(transform $animation-time 0.2s ease-in-out);
+  @include transition(transform $animation-time 0.2s ease-in-out, opacity $animation-time 0.2s ease-in-out);
 
   section {
 	height: 100vh;
@@ -503,8 +492,84 @@ button {
 	  }
 	}
   }
-
 }
+
+@media all and (max-width: 764px) {
+  body {
+	&.final {
+	  header {
+		&.color-blue {
+		  background: rgba(0, 255, 210, 0.8);
+		}
+		&.color-green {
+		  background: rgba(0, 255, 96, 0.8);
+		}
+		&.color-pink {
+		  background: rgba(255, 38, 222, 0.8);
+		}
+	  }
+	}
+	header {
+	  background: rgba(255, 255, 255, 0.8);
+	}
+  }
+
+  header {
+	.logo {
+	  width: 40px;
+	  height: 40px;
+	}
+  }
+
+  footer {
+	font-size: em(12);
+	padding-left: 10px;
+	padding-top: 10px;
+  }
+
+  .final-container {
+	min-height: initial;
+	padding: 80px 40px 70px;
+	&#final-client-parfait {
+	  padding-top: 70px;
+	}
+	background-position: center bottom;
+	background-size: auto 60vh;
+	.text {
+	  h2 {
+		font-size: em(40);
+	  }
+	}
+
+	.image {
+	  position: static;
+	  left: auto;
+	  @include transform (translateX(0));
+	  bottom: auto;
+	  z-index: 1;
+	  padding-left: 20px;
+	  padding-right: 0;
+	  img {
+		width: auto;
+		height: 40vh;
+	  }
+	}
+
+	&#final-client-parfait {
+	  .image {
+		@include transform (translateX(0));
+		padding-right: 0px;
+		overflow: hidden;
+		img {
+		  margin-bottom: 0;
+		  width: auto;
+		  height: 40vh;
+		}
+	  }
+	}
+  }
+}
+
 
 @media all and (max-width: 580px) {
 
@@ -571,64 +636,6 @@ button {
   }
 }
 
-@media all and (max-width: 764px) {
-
-  header {
-	.logo {
-	  width: 40px;
-	  height: 40px;
-	}
-  }
-
-  footer {
-	font-size: em(12);
-	padding-left: 10px;
-	padding-top: 10px;
-  }
-
-  .final-container {
-	min-height: initial;
-	padding: 70px 40px;
-	&#final-client-parfait {
-	  padding-top: 70px;
-	}
-	background-position: center bottom;
-	background-size: auto 60vh;
-	.text {
-	  h2 {
-		font-size: em(40);
-	  }
-	}
-
-	.image {
-	  position: static;
-	  left: auto;
-	  @include transform (translateX(0));
-	  bottom: auto;
-	  z-index: 1;
-	  padding-left: 20px;
-	  padding-right: 0;
-	  img {
-		width: auto;
-		height: 40vh;
-	  }
-	}
-
-	&#final-client-parfait {
-	  .image {
-		@include transform (translateX(0));
-		padding-right: 0px;
-		overflow: hidden;
-		img {
-		  margin-bottom: 0;
-		  width: auto;
-		  height: 40vh;
-		}
-	  }
-	}
-  }
-}
-
 @media all and (max-width: 480px) {
 
   header {
@@ -639,6 +646,18 @@ button {
 
 	.social {
 	  top: 20px;
+	}
+  }
+
+  .final-container {
+	.text {
+	  width: 100%;
+	  .buttons {
+		display: block;
+		.restart-button {
+		  margin-top: 20px;
+		}
+	  }
 	}
   }
 

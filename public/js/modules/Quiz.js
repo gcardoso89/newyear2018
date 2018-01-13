@@ -105,7 +105,8 @@ class Quiz {
 		} else {
 			winnerBlock.setAttribute( 'style', 'display:flex;' );
 		}
-		setTimeout( () => winnerBlock.setAttribute( 'class', 'final-container winner' ), 100 )
+		setTimeout( () => winnerBlock.setAttribute( 'class', 'final-container winner' ), 100 );
+		setTimeout( () => winnerBlock.setAttribute( 'style', winnerBlock.getAttribute('style')+ ';height:auto;' ), 1000 );
 		history.pushState({}, 'Winner', `/${winner}`);
 	}
 }

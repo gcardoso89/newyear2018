@@ -5,7 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compass/_main.scss" afterPath="$PROJECT_DIR$/compass/_main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/modules/Quiz.js" afterPath="$PROJECT_DIR$/public/js/modules/Quiz.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,8 +55,8 @@
       <file leaf-file-name="Quiz.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/modules/Quiz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
+            <state relative-caret-position="650">
+              <caret line="108" column="105" lean-forward="true" selection-start-line="108" selection-start-column="105" selection-end-line="108" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -84,7 +85,7 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="1200">
               <caret line="80" column="106" lean-forward="false" selection-start-line="80" selection-start-column="106" selection-end-line="80" selection-end-column="106" />
               <folding />
             </state>
@@ -94,8 +95,8 @@
       <file leaf-file-name="_main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compass/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="567" column="26" lean-forward="true" selection-start-line="567" selection-start-column="26" selection-end-line="567" selection-end-column="26" />
+            <state relative-caret-position="437">
+              <caret line="657" column="27" lean-forward="false" selection-start-line="657" selection-start-column="27" selection-end-line="657" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -154,6 +155,7 @@
       <find>.style =</find>
       <find>final-c</find>
       <find>entrance-button</find>
+      <find>.final-</find>
     </findStrings>
     <replaceStrings>
       <replace>sharing-facebook</replace>
@@ -192,10 +194,10 @@
         <option value="$PROJECT_DIR$/views/partials/character.hbs" />
         <option value="$PROJECT_DIR$/public/js/modules/Emitter.js" />
         <option value="$PROJECT_DIR$/public/js/modules/Nav.js" />
-        <option value="$PROJECT_DIR$/public/js/modules/Quiz.js" />
         <option value="$PROJECT_DIR$/compass/_variables.scss" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/views/index.hbs" />
+        <option value="$PROJECT_DIR$/public/js/modules/Quiz.js" />
         <option value="$PROJECT_DIR$/compass/_main.scss" />
       </list>
     </option>
@@ -304,6 +306,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v8.9.1/bin/node" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/goncalocardoso/personal/newyear2018/views/index.hbs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -347,12 +350,12 @@
       <workItem from="1515217508606" duration="3158000" />
       <workItem from="1515221342343" duration="27948000" />
       <workItem from="1515657440091" duration="12080000" />
-      <workItem from="1515756396369" duration="5950000" />
+      <workItem from="1515756396369" duration="6880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73362000" />
+    <option name="totallyTimeSpent" value="74292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="969" extended-state="6" />
@@ -633,14 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/modules/Quiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compass/_colors.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -665,14 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -683,9 +670,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/modules/Quiz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="108" column="105" lean-forward="true" selection-start-line="108" selection-start-column="105" selection-end-line="108" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="1200">
           <caret line="80" column="106" lean-forward="false" selection-start-line="80" selection-start-column="106" selection-end-line="80" selection-end-column="106" />
           <folding />
         </state>
@@ -693,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compass/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="567" column="26" lean-forward="true" selection-start-line="567" selection-start-column="26" selection-end-line="567" selection-end-column="26" />
+        <state relative-caret-position="437">
+          <caret line="657" column="27" lean-forward="false" selection-start-line="657" selection-start-column="27" selection-end-line="657" selection-end-column="27" />
           <folding />
         </state>
       </provider>
