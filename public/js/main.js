@@ -33,10 +33,10 @@ import { getProperty } from "./modules/helpers";
 		};
 
 		_windowOnResize() {
-			this._innerHeight = this._wrap.height;
+			this._innerHeight = (this._wrap) ? this._wrap.height : window.innerHeight;
 			for ( let i = 0; i < this._elementsToFix.length; i++ ) {
 				let element = this._elementsToFix[ i ];
-				element.setAttribute( 'style', `height: ${this._wrap.height}px` );
+				element.setAttribute( 'style', `height: ${this._innerHeight}px` );
 			}
 			if ( this._activeSection !== null ) {
 				this._container.setAttribute( 'style', getProperty( 'transform', `translate3d(0,-${((this._activeSection + 1) * this._innerHeight)}px,0)` ) );
