@@ -58,7 +58,7 @@ header {
   padding: 20px;
 
   & {
-	background: rgba(255,255,255,0.8);
+	background: rgba(255, 255, 255, 0.8);
 	& {
 
 	}
@@ -479,7 +479,7 @@ button {
 	padding-right: 40px;
 	overflow: hidden;
 	img {
-	  margin-bottom:-5vh;
+	  margin-bottom: -5vh;
 	  width: auto;
 	  height: 80vh;
 	}
@@ -491,7 +491,7 @@ button {
 	  padding-right: 0px;
 	  overflow: hidden;
 	  img {
-		margin-bottom:-15vh;
+		margin-bottom: -15vh;
 		height: 90vh;
 	  }
 	}
@@ -606,7 +606,7 @@ button {
 		padding-right: 0px;
 		overflow: hidden;
 		img {
-		  margin-bottom:0;
+		  margin-bottom: 0;
 		  width: auto;
 		  height: 40vh;
 		}
@@ -643,12 +643,15 @@ button {
 			padding: 12px 0;
 		  }
 		}
-
 	  }
 
 	  .entrance-left {
-		 font-size: em(30);
-	   }
+		font-size: em(30);
+	  }
+	}
+
+	> section {
+	  padding-top: 0px;
 	}
   }
 }
