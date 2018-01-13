@@ -566,17 +566,6 @@ button {
 	}
   }
 
-  main {
-	section {
-	  padding-top: 30px;
-	  
-	  .entrance-left {
-		font-size: em(30);
-
-	  }
-	}
-  }
-
   footer {
 	font-size: em(12);
 	padding-left: 10px;
@@ -622,6 +611,44 @@ button {
 		  height: 40vh;
 		}
 	  }
+	}
+  }
+}
+
+@media all and (max-width: 480px) {
+
+  header {
+	.logo {
+	  width: 25px;
+	  height: 25px;
+	}
+
+	.social {
+	  top: 20px;
+	}
+  }
+
+  main {
+	section {
+	  padding-top: 35px;
+
+	  .question {
+		font-size: em(18);
+		line-height: 1.2;
+	  }
+
+	  .answers {
+		ol {
+		  li {
+			padding: 12px 0;
+		  }
+		}
+
+	  }
+
+	  .entrance-left {
+		 font-size: em(30);
+	   }
 	}
   }
 }
