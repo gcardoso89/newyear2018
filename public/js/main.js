@@ -23,7 +23,7 @@ import { getProperty } from "./modules/helpers";
 			}
 
 			if ( this._isIPhone ) {
-				this._elementsToFix = document.querySelectorAll( 'main section' );
+				this._elementsToFix = document.querySelectorAll( 'main section, #main' );
 				window.onresize = this._windowOnResize.bind( this );
 				window.onload = this._windowOnResize.bind( this );
 				window.onreadystatechange = this._windowOnResize.bind( this );
