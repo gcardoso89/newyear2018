@@ -566,6 +566,15 @@ button {
 	}
   }
 
+  main {
+	section {
+	  padding-top: 30px;
+	  .entrance-left {
+		font-size: em(30);
+	  }
+	}
+  }
+
   footer {
 	font-size: em(12);
 	padding-left: 10px;
