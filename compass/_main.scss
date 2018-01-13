@@ -56,6 +56,14 @@ header {
   z-index: 3;
   width: 100%;
   padding: 20px;
+
+  & {
+	background: rgba(255,255,255,0.8);
+	& {
+
+	}
+  }
+
   .logo {
 	display: block;
 	@include transition(background-color);
@@ -565,7 +573,7 @@ button {
   }
 
   .final-container {
-	min-height: inherit;
+	min-height: initial;
 	padding: 70px 40px;
 	&#final-client-parfait {
 	  padding-top: 70px;

@@ -23,8 +23,6 @@ import { getProperty } from "./modules/helpers";
 				this._entranceButton.addEventListener( 'click', this._onEntranceButtonClick.bind( this ) );
 			}
 
-
-
 			if ( this._isIPhone ) {
 				this._elementsToFix = document.querySelectorAll( 'main section' );
 				window.onresize = this._windowOnResize.bind( this );
