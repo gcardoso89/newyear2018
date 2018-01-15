@@ -40,16 +40,14 @@
 		<meta name="twitter:creator" content="@4aout"/>
 		<meta name="twitter:title" content="Quel client êtes-vous | Agence 4août"/>
 		<meta name="twitter:description"
-					content="#2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le #test concocté par @4aout et découvrez quel
-				type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout http://moiclient.fr"/>
+					content="#2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le #test concocté par @4aout et découvrez quel type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout http://moiclient.fr"/>
 		<meta name="twitter:image"
 					content="http://moiclient.fr/images/social/Voeux_2018_twitter.png"/>
 
 		<meta property="og:type" content="website"/>
 		<meta property="og:title" content="Quel client êtes-vous | Agence 4août"/>
 		<meta property="og:description"
-					content="2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le test concocté par @4aout et
-				découvrez quel type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout "/>
+					content="2018 sera-t-elle l'année qui vous permettra de mieux vous connaître ? Faites le test concocté par @4aout et découvrez quel type de client vous êtes, ou seriez dans le monde impitoyable des agences de communication ! #4aout "/>
 		<meta property="og:image"
 					content="http://moiclient.fr/images/social/Voeux_2018_facebook.png"/>
 	{{/if}}
@@ -164,15 +162,15 @@
 		m.parentNode.insertBefore( a, m )
 	})( window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga' );
 
-	ga( 'create', 'UA-39829285-6', 'auto' );
-	ga( 'send', 'pageview' );
+	ga( 'create', 'UA-112412775-1', 'auto' );
+
 		{{#if winner}}
 		ga( 'send', {
 			hitType: 'pageview',
 			page: "/" + "{{{winner.key}}}"
 		} );
 		{{else}}
-
+		ga( 'send', 'pageview' );
 		{{/if}}
 
 	window.addEventListener("load",function() {
