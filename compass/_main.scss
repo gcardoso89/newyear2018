@@ -486,6 +486,7 @@ button {
 	  @include transform (translateX(-50%));
 	  padding-right: 0px;
 	  overflow: hidden;
+	  z-index: -1;
 	  img {
 		margin-bottom: -15vh;
 		height: 90vh;
