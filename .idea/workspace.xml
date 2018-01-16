@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef2fcc9b-54fa-49c6-9203-9e62161893a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compass/_main.scss" afterPath="$PROJECT_DIR$/compass/_main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -98,17 +98,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="175" lean-forward="false" selection-start-line="55" selection-start-column="175" selection-end-line="55" selection-end-column="175" />
+            <state relative-caret-position="690">
+              <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_main.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compass/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
@@ -194,10 +194,10 @@
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/public/js/modules/Quiz.js" />
         <option value="$PROJECT_DIR$/public/js/modules/SocialLinks.js" />
-        <option value="$PROJECT_DIR$/views/index.hbs" />
         <option value="$PROJECT_DIR$/newyear2018.json" />
         <option value="$PROJECT_DIR$/finals.js" />
         <option value="$PROJECT_DIR$/compass/_main.scss" />
+        <option value="$PROJECT_DIR$/views/index.hbs" />
       </list>
     </option>
   </component>
@@ -365,12 +365,12 @@
       <workItem from="1515756396369" duration="7333000" />
       <workItem from="1516011849328" duration="1555000" />
       <workItem from="1516068824477" duration="690000" />
-      <workItem from="1516100971496" duration="214000" />
+      <workItem from="1516100971496" duration="1506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77204000" />
+    <option name="totallyTimeSpent" value="78496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="969" extended-state="6" />
@@ -686,18 +686,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="175" lean-forward="false" selection-start-line="55" selection-start-column="175" selection-end-line="55" selection-end-column="175" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compass/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="488" column="17" lean-forward="false" selection-start-line="488" selection-start-column="17" selection-end-line="488" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
           <folding />
         </state>
       </provider>
