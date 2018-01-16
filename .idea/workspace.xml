@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef2fcc9b-54fa-49c6-9203-9e62161893a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_angoisse-du-brief_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_baroque-multicolore_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_bff-best-friend-forever_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_client-parfait_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_cost-killer_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_facebook.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/social/Voeux_2018_vintage_facebook.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -108,8 +101,8 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="30" column="111" lean-forward="false" selection-start-line="30" selection-start-column="111" selection-end-line="30" selection-end-column="111" />
+            <state relative-caret-position="375">
+              <caret line="25" column="71" lean-forward="false" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -372,12 +365,12 @@
       <workItem from="1515756396369" duration="7333000" />
       <workItem from="1516011849328" duration="1555000" />
       <workItem from="1516068824477" duration="690000" />
-      <workItem from="1516100971496" duration="1803000" />
+      <workItem from="1516100971496" duration="1904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78793000" />
+    <option name="totallyTimeSpent" value="78894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="969" extended-state="6" />
@@ -703,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="30" column="111" lean-forward="false" selection-start-line="30" selection-start-column="111" selection-end-line="30" selection-end-column="111" />
+        <state relative-caret-position="375">
+          <caret line="25" column="71" lean-forward="false" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
           <folding />
         </state>
       </provider>
